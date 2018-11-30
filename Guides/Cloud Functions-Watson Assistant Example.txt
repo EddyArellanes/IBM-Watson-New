@@ -1,0 +1,41 @@
+
+JSON Example to Send Call to Cloud Functions in Dialog
+{
+  "output": {
+    "context": {
+      "facebook": {
+        "text": "Hi,\n\nWe have a great giveaway for you, but first we’d like for you to follow us so that you can stay updated on the latest news and trends.\n\nPlease take a moment to follow us and let me know when you've followed us by typing DONE:\n\n",
+        "buttons": [
+          {
+            "url": "https://google.com.mx",
+            "type": "web_url",
+            "title": "Follow IBM Commerce",
+            "messenger_extensions": "true",
+            "webview_height_ratio": "full"
+          }
+        ],
+        "template_type": "button"
+      }
+    }
+  },  
+  "actions": [
+    {
+      "name": "w600_12@yahoo.com.mx_dev/actions/messenger/ShowCards",
+      "type": "cloud_function",
+      "parameters": {
+        "age": "24",
+        "name": "Eddy"
+      },
+      "credentials": "$private.api_credentials",
+      "result_variable": "$user_info"
+    }
+  ]
+}
+
+The Context Variable $private Looks like:
+{"api_credentials":{"user":"02908900-4b41-44cb-83f6-68f9962de8ee","password":"VwYHQGuZJ0a3LrKo4Gh0sbhg4Wkj1ZOf5DIpr6DNfO8Uxut8hIeWgBfEXIjJkN5f"}}
+
+And Snippet that are in the Cloud Function, If you need to know how to Create a Cloud Function, Doc is here:
+https://console.bluemix.net/docs/services/assistant/dialog-actions.html#dialog-actions
+
+
